@@ -5,7 +5,7 @@ LFLAGS =
 BIN = es
 SRC = $(wildcard *.cpp)
 OBJ = $(SRC:.cpp=.o)
-TPP = sieve.tpp
+TPP = $(wildcard *.tpp)
 OUT = prime_bitset.h
 
 RM = rm -f
