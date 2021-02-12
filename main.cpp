@@ -1,14 +1,13 @@
-#include <bitset>
 #include <iostream>
+#include <vector>
 #include "sieve.h"
 #include "write_primes.h"
 
 int main (void)
 {
   constexpr unsigned long long B = 10000;
-  constexpr unsigned long long N_ODDS = (B+1) / 2; // int div truncates to zero
 
-  std::bitset<N_ODDS> prime_bset;
+  std::vector<bool> prime_bset;
 
   const std::size_t COUNT = eratosthenes(B, prime_bset);
 

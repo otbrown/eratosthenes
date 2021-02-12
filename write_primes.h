@@ -1,10 +1,8 @@
 #ifndef WRITE_PRIMES_H
 #define WRITE_PRIMES_H
 
-#include <bitset>
+#include <vector>
 
-template <std::size_t N>
-void writePrimeHeader(const std::bitset<N>&);
-#include "write_primes.tpp"
+void writePrimeHeader(const std::vector<bool>&);
 
 #endif
