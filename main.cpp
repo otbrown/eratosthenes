@@ -1,6 +1,7 @@
 #include <bitset>
 #include <iostream>
 #include "sieve.h"
+#include "write_primes.h"
 
 int main (void)
 {
@@ -15,6 +16,8 @@ int main (void)
   std::cout
     << "Smoothness Bound: " << B << "\n"
     << "Number of primes: " << COUNT + 1 << std::endl;
+
+  writePrimeHeader(prime_bset);
 
   return 0;
 }
