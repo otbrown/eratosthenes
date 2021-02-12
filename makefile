@@ -6,6 +6,7 @@ BIN = es
 SRC = $(wildcard *.cpp)
 OBJ = $(SRC:.cpp=.o)
 TPP = sieve.tpp
+OUT = prime_bitset.h
 
 RM = rm -f
 
@@ -19,4 +20,4 @@ all: ${BIN}
 
 .PHONY: clean
 clean:
-	${RM} *.o ${BIN}
+	${RM} *.o ${BIN} ${OUT}
