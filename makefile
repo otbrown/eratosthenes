@@ -5,11 +5,11 @@ LFLAGS =
 BIN = es
 SRC = $(wildcard *.cpp)
 OBJ = $(SRC:.cpp=.o)
-HDR = sieve.h
+TPP = sieve.tpp
 
 RM = rm -f
 
-%.o: %.cpp ${HDR}
+%.o: %.cpp ${TPP}
 	${CXX} -c ${CPPFLAGS} $< -o $@
 
 ${BIN}: ${OBJ}
