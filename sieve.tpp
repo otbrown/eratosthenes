@@ -16,10 +16,24 @@ std::bitset<N>& prime_bset) {
   const std::size_t I_LIM = static_cast<std::size_t>(
     std::floor(std::sqrt(SMOOTH_BOUND))
   );
-  for (std::size_t i = 3; i <= I_LIM; i += 2) {
-    if (prime_bset[bsetIndex(i)]) {
-      for (std::size_t j = i*i; j <= SMOOTH_BOUND; j += i)
-        prime_bset[bsetIndex(j)] = false;
+
+  #pragma omp parallel
+  {
+    std::bitset<N> thread_bset;
+    thread_bset.set();
+    thread_bset[0] = false;
+
+    #pragma omp for
+    for (std::size_t i = 3; i <= I_LIM; i += 2) {
+      if (thread_bset[bsetIndex(i)]) {
+        for (std::size_t j = i*i; j <= SMOOTH_BOUND; j += i)
+          thread_bset[bsetIndex(j)] = false;
+      }
+    }
+
+    #pragma omp critical
+    {
+      prime_bset &= thread_bset;
     }
   }
 

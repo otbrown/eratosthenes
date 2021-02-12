@@ -1,6 +1,6 @@
 CXX = g++
-CPPFLAGS = -Wall -O3
-LFLAGS =
+CPPFLAGS = -Wall -O3 -fopenmp
+LFLAGS = -fopenmp
 
 BIN = es
 SRC = $(wildcard *.cpp)
