@@ -5,7 +5,7 @@
 
 int main (void)
 {
-  constexpr unsigned long long B = 10000;
+  constexpr unsigned long long B = 100;
 
   std::vector<bool> prime_bset;
 
