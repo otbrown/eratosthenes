@@ -16,7 +16,7 @@ std::size_t PrimeChecker::bsetIndex(const unsigned long long N) const {
   return idx;
 }
 
-unsigned long long bsetNum(const std::size_t IDX) {
+unsigned long long PrimeChecker::bsetNum(const std::size_t IDX) const {
   return 2 * IDX + 1;
 }
 
